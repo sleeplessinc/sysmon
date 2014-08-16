@@ -4,7 +4,7 @@ http = require("http");
 sleepless = require("sleepless");
 
 var port = 5700;
-
+var PING_FREQ = 5000;
 var das_account = process.env["DAS_ACCOUNT"];
 var das_secret = process.env["DAS_SECRET"];
 var das_host = process.env["DAS_HOST"];
@@ -23,6 +23,7 @@ tick = function() {
 		cpus: os.cpus(),
 		totalmem: os.totalmem(),
 		freemem: os.freemem(),
+		pingFreq: PING_FREQ,
 	}
 	
 	var req = http.request({
@@ -45,7 +46,7 @@ tick = function() {
 	req.write(o2j(o));
 	req.end();
 
-	setTimeout(tick, 5000);
+	setTimeout(tick, PING_FREQ);
 }
 
 tick(); 
