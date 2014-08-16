@@ -4,7 +4,7 @@ http = require("http");
 sleepless = require("sleepless");
 
 var port = 5700;
-var PING_FREQ = 5000;
+var PING_FREQ = 60 * 1000;
 var das_service = "sysmon";
 var das_account = process.env["DAS_ACCOUNT"];
 var das_secret = process.env["DAS_SECRET"];
