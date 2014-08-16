@@ -20,6 +20,7 @@ tick = function() {
 		release: os.release(),
 		uptime: os.uptime(),
 		loadavg: os.loadavg(),
+		cpus: os.cpus(),
 		totalmem: os.totalmem(),
 		freemem: os.freemem(),
 	}
