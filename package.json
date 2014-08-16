@@ -1,0 +1,8 @@
+{
+  "name": "sysmon",
+  "description": "Minimalist system monitoring tool",
+  "version": "1.0.0",
+  "dependencies": {
+    "sleepless": "^1.2.6"
+  }
+}
