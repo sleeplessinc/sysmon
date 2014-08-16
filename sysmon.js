@@ -5,6 +5,7 @@ sleepless = require("sleepless");
 
 var port = 5700;
 var PING_FREQ = 5000;
+var das_service = "sysmon";
 var das_account = process.env["DAS_ACCOUNT"];
 var das_secret = process.env["DAS_SECRET"];
 var das_host = process.env["DAS_HOST"];
@@ -29,7 +30,7 @@ tick = function() {
 	var req = http.request({
 		hostname: das_host,
 		port: 5700,
-		path: "/ping",
+		path: "/"+das_service+"/?account="+das_account+"&secret="+das_secret,
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
