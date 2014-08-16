@@ -23,7 +23,7 @@ tick = function() {
 		cpus: os.cpus(),
 		totalmem: os.totalmem(),
 		freemem: os.freemem(),
-		pingFreq: PING_FREQ,
+		pingfreq: PING_FREQ,
 	}
 	
 	var req = http.request({
