@@ -27,7 +27,7 @@ tick = function() {
 	var req = http.request({
 		hostname: das_host,
 		port: 5700,
-		path: "/" + das_account + "/" + das_secret + "/ping",
+		path: "/ping",
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
