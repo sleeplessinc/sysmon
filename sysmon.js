@@ -44,7 +44,6 @@ tick = function() {
 	});
 	req.write(o2j(o));
 	req.end();
-	console.log(o2j(o));
 
 	setTimeout(tick, 5000);
 }
