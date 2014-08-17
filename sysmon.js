@@ -1,4 +1,5 @@
 
+fs = require("fs");
 os = require("os");
 fs = require("fs");
 http = require("http");
@@ -10,10 +11,10 @@ var das_service = "sysmon";
 
 var home = process.env["HOME"];
 
-var a = (fs.readFileSync(home+"/.sysmon", {encoding:"utf8"})).split("\n");
-var das_host = a[0];
-var das_account = a[1];
-var das_secret = a[2];
+var a = fs.readFileSync(home+"/.sysmon", {encoding:"utf8"}).split("\n");
+das_host = a[0];
+das_account = a[1];
+das_secret = a[2];
 
 
 tick = function() {
