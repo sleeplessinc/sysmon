@@ -1,5 +1,6 @@
 
 os = require("os");
+fs = require("fs");
 http = require("http");
 sleepless = require("sleepless");
 
@@ -8,15 +9,11 @@ var PING_FREQ = 60 * 1000;
 var das_service = "sysmon";
 
 var home = process.env["HOME"];
-fs.readFileSync(home+"/.sysmon", function(err, data) {
-	if(err) {
-		throw err;
-	}
-	var a = data.split("\n");
-	das_host = a[0];
-	das_account = a[1];
-	das_secret = a[2];
-});
+
+var a = (fs.readFileSync(home+"/.sysmon", {encoding:"utf8"})).split("\n");
+var das_host = a[0];
+var das_account = a[1];
+var das_secret = a[2];
 
 
 tick = function() {
