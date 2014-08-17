@@ -1,4 +1,5 @@
 
+fs = require("fs");
 os = require("os");
 http = require("http");
 sleepless = require("sleepless");
