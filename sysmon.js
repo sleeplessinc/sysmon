@@ -6,9 +6,17 @@ sleepless = require("sleepless");
 var port = 5700;
 var PING_FREQ = 6 * 1000;
 var das_service = "sysmon";
-var das_account = process.env["DAS_ACCOUNT"];
-var das_secret = process.env["DAS_SECRET"];
-var das_host = process.env["DAS_HOST"];
+
+var home = process.env["HOME"];
+fs.readFileSync(home+"/.sysmon", function(err, data) {
+	if(err) {
+		throw err;
+	}
+	var a = data.split("\n");
+	das_host = a[0];
+	das_account = a[1];
+	das_secret = a[2];
+});
 
 
 tick = function() {
