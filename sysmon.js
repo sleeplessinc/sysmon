@@ -16,11 +16,18 @@ das_host = a[0];
 das_account = a[1];
 das_secret = a[2];
 
+hostname = os.hostname();
+
+argv = process.argv;
+if(argv.length >= 3) {
+	hostname = argv[2];
+}
+
 
 tick = function() {
 
 	var o = {
-		hostname: os.hostname(),
+		hostname: hostname,
 		type: os.type(),
 		platform: os.platform(),
 		arch: os.arch(),
